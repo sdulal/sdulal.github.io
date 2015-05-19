@@ -165,6 +165,20 @@ section {
     border: 10px solid #F5F1DE;
 }
 
+#profile-pic div {
+    height: 200px;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 10px solid #F5F1DE;
+    background: url(../img/profile.jpg) 0px -25px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .beige {
   background-color: #F5F1DE;
 }
