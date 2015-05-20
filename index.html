@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/social-likes_flat.css">
@@ -10,14 +10,16 @@
 	<meta name="description" content="Personal page">
 	<meta name="keywords" content="Personal, portfolio, website, projects, skills, computer science">
 	<meta name="author" content="Shafqat Dulal">
-	<script src="assets/js/jquery-2.1.3.min.js"></script>
-	<script src="assets/js/jquery.waypoints.min.js"></script>
-	<script src="assets/js/jquery.visible.min.js"></script>
-	<script src="assets/js/social-likes.min.js"></script>
+	<script src="assets/js/vendor/jquery-2.1.3.min.js"></script>
+	<script src="assets/js/vendor/jquery.waypoints.min.js"></script>
+	<script src="assets/js/vendor/jquery.visible.min.js"></script>
+	<script src="assets/js/vendor/social-likes.min.js"></script>
+	<script src="assets/js/vendor/angular.min.js"></script>
 	<script src="assets/js/script.js"></script>
+	<script src="assets/js/app.js"></script>
 	<title>Shafqat Dulal</title>
 </head>
-<body>
+<body ng-app="app">
 	<div id="container">
 		<div class="parallax background">
 			<div id="main-title">
@@ -31,7 +33,7 @@
 				<span class="fa fa-chevron-down"></span>
 			</a>
 		</div>
-		<div id="content">
+		<div id="content" ng-controller="MainController">
 			<nav>
 				<li id="item1"><a href="#about">About</a></li>
 				<li id="item2"><a href="#experiences">Work</a></li>
@@ -57,30 +59,12 @@
 						<h1>Experiences</h1>
 						<h2>The things I've done so far</h2>
 					</header>
-					<div class="experience">
-						<div class="image"><img src="assets/img/oppia.png" alt=""></div>
+					<div class="experience" ng-repeat="experience in experiences">
+						<div class="image"><img src="{{ experience.image }}" alt=""></div>
 						<div class="exp-info">
-							<div class='experience-title'>Oppia</div>		
+							<div class='experience-title'>{{ experience.title }}</div>		
 							<div class="text">
-								Founded by a few employees at Google, Oppia is an open-source project that aims to allow anyone to create interactive "explorations" and simulate one-on-one tutoring. I contributed to the project by adding infinite scrolling to the gallery on the website, picking up AngularJS in the process! Being only in the first semester at UC Berkeley at the time, I thought that this project was great and because of it, I was able to start contributing using my programming skills early on!
-							</div>
-						</div>
-					</div>
-					<div class="experience">
-						<div class="image"><img src="assets/img/upe.png" alt=""></div>
-						<div class="exp-info">
-							<div class='experience-title'>Upsilon Pi Epsilon</div>
-							<div class="text">
-								I am in the web development committee at UPE, the Computer Science Honor Society at UC Berkeley. Me and a few others work on adding new features to their website and improving the code base. Recently, we improved office hours such that officers could manage hours with a simple interface (no code knowledge needed). Also, we added the ability to schedule appointments for mock interviews and other things. It has been a great learning experience; I picked up some knowledge of Django and PostgreSQL here!
-							</div>		
-						</div>
-					</div>
-					<div class="experience">
-						<div class="image"><img src="assets/img/gitlet.png" alt=""></div>
-						<div class="exp-info">
-							<div class='experience-title'>Gitlet</div>
-							<div class="text">
-								I made a copy of Git in Java. Yes, Git—the exact version control system that was involved in pushing this very website! Although Gitlet was given as a class project, I had to design everything from scratch—no skeleton code or anything like that. Another thing was that I had to write all the tests by myself. All these things were definitely non-trivial and the project was relatively large. Certainly, this was one of the most practical and challenging projects I've done to date. 
+								{{ experience.text }}
 							</div>
 						</div>
 					</div>
@@ -159,44 +143,14 @@
 					<h2>An intersection of technology and culture</h2>
 				</header>
 				<div id="interests-pictures">
-					<div class="interest">
-						<img src="assets/img/theverge.png">
+					<div class="interest" ng-repeat="interest in interests">
+						<img src="{{ interest.image }}">
 						<div class="interest-info">
-							<div class="interest-name">The Verge</div>
+							<div class="interest-name">{{ interest.name }}</div>
 							<div class="interest-text">
-								One of the top sites to go to for technology news. Been following it since it was "This is my Next".
+								{{ interest.text }}
 							</div>
-							<a href="http://www.theverge.com/" target="_blank"></a>
-						</div>
-					</div>
-					<div class="interest">
-						<img src="assets/img/macrumors.png">
-						<div class="interest-info">
-							<div class="interest-name">MacRumors</div>
-							<div class="interest-text">
-								Good source of news about Apple-related things. Forums are useful, too. Discovered it during a history day project years ago.
-							</div>
-							<a href="http://www.macrumors.com/" target="_blank"></a>
-						</div>
-					</div>
-					<div class="interest">
-						<img src="assets/img/idownloadblog.png" alt="">
-						<div class="interest-info">
-							<div class="interest-name">iDownloadBlog</div>
-							<div class="interest-text">
-								Very useful for finding out all that's needed for jailbreaks and the like.
-							</div>
-							<a href="http://www.idownloadblog.com/" target="_blank"></a>
-						</div>
-					</div>
-					<div class="interest">
-						<img src="assets/img/ign.png" alt="">
-						<div class="interest-info">
-							<div class="interest-name">IGN</div>
-							<div class="interest-text">
-								The reviews that IGN gives on my favorite shows (like Arrow and Flash) are places for interesting discussions.
-							</div>
-							<a href="http://www.ign.com/" target="_blank"></a>
+							<a href="{{ interest.link }}" target="_blank"></a>
 						</div>
 					</div>
 				</div>
