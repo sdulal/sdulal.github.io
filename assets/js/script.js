@@ -8,7 +8,6 @@ $(document).ready(function() {
     enableSmoothScroll();
     circularize();
     infoOnHover();
-    guaranteeFullScreenSections();
     aboutAnimations();
     experiencesAnimations();
     interestsAnimations();
@@ -101,7 +100,7 @@ function aboutAnimations() {
         if ($('#profile-pic').visible(true) && !animatedAbout) {
             $('#profile-pic').css('transform', 'scale(1)');
             setTimeout(function() {
-                $('#about-me').fadeIn(1000);
+                $('#about-me').css('visibility','visible').hide().fadeIn(1000);
             }, 500);
             animatedAbout = true;
         };

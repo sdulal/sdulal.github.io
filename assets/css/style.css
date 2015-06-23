@@ -187,7 +187,7 @@ section {
     margin: 2em 10em;
     text-align: center;
     line-height: 35px;
-    display: none;
+    visibility: hidden;
 }
 
 .experience .image img {
