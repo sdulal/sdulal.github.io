@@ -502,7 +502,8 @@ nav li a:hover {
   transition: all 0.25s;
 }
 
-/*Keyframes. http://www.smashingmagazine.com/2011/05/17/an-introduction-to-css3-keyframe-animations/ */
+/* Keyframes */
+
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     -ms-transform: translateY(0);
