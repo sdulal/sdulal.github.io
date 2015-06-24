@@ -63,7 +63,7 @@
 					<div class="experience" ng-repeat="experience in experiences">
 						<div class="image"><img ng-src="{{ experience.image }}" alt=""></div>
 						<div class="exp-info">
-							<div class='experience-title'>{{ experience.title }}</div>
+							<div class='experience-title'><a href="{{ experience.link }}" target="_blank">{{ experience.title }}</a></div>
 							<div class="text">
 								{{ experience.text }}
 							</div>
