@@ -16,6 +16,12 @@ app.controller('MainController', ['$scope', function($scope) {
             link: '#'
         },
         {
+            title: 'This Website',
+            text: 'This very site stands as a project! I intend to showcase the design skills that I have, as well as highlight some of the things I have done and picked up over time. The usual elements of front-end development are involved—HTML, CSS and JavaScript. Such libraries and frameworks as jQuery and AngularJS are used for some animations and conveniences. Of course, the site is technically always a work in progress since I will document projects and other things to come. Even at that, there is a lot of room for this site to grow!',
+            image: 'assets/img/this.png',
+            link: '#'
+        },
+        {
             title: 'Upsilon Pi Epsilon',
             text: 'I contributed to the web development committee at UPE, the Computer Science Honor Society at UC Berkeley. Me and a few others worked on adding new features to their website and improving the code base. Recently, we improved office hours such that officers could manage hours with a simple interface—no code knowledge needed. Also, we added the ability to schedule appointments for mock interviews and other things. It has been a great learning experience; I picked up some knowledge of the Django framework (and ultimately backend) here!',
             image: 'assets/img/upe.png',
