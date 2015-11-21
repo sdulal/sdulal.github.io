@@ -2,7 +2,7 @@
 $(document).ready(function() {
     $('.background').css('height', $(window).height() + 'px');
     fadeInIntro();
-	enableResize();
+    enableResize();
     stickyNav();
     alternateExperiencePositions();
     enableSmoothScroll();
@@ -15,9 +15,9 @@ $(document).ready(function() {
 });
 
 function enableResize() {
-	$(window).on('resize', function(event) {
-		$('.background').css('height', $(window).height() + 'px');
-	});
+    $(window).on('resize', function(event) {
+        $('.background').css('height', $(window).height() + 'px');
+    });
 }
 
 function stickyNav() {
@@ -34,7 +34,7 @@ function enableSmoothScroll() {
     $("a[href^='#']").click(function(event) {
         event.preventDefault();
         $('html, body').animate({
-          scrollTop: $($.attr(this, 'href')).offset().top
+            scrollTop: $($.attr(this, 'href')).offset().top
         }, 1000);
     });
 }
@@ -45,11 +45,12 @@ function alternateExperiencePositions() {
             $(this).css('transform', 'rotateY(180deg)');
             $(this).children().css('transform', 'scaleX(-1)');
             $(this).find('.exp-info').css('transform-origin', '25%');
-        }        
+        }
     });
 }
 
 allowed = false;
+
 function infoOnHover() {
     $('.skill-icon').hover(function() {
         if (!allowed) {
@@ -95,12 +96,13 @@ function guaranteeFullScreenSections() {
 }
 
 var animatedAbout = false;
+
 function aboutAnimations() {
     $(window).scroll(function(event) {
         if ($('#profile-pic').visible(true) && !animatedAbout) {
             $('#profile-pic').css('transform', 'scale(1)');
             setTimeout(function() {
-                $('#about-me').css('visibility','visible').hide().fadeIn(1000);
+                $('#about-me').css('visibility', 'visible').hide().fadeIn(1000);
             }, 500);
             animatedAbout = true;
         };
@@ -108,6 +110,7 @@ function aboutAnimations() {
 }
 
 var animatedInterests = false;
+
 function interestsAnimations() {
     $(window).scroll(function(event) {
         if ($('#interests-pictures').visible(true) && !animatedInterests) {
@@ -119,14 +122,32 @@ function interestsAnimations() {
         }
     });
     $('.interest').hover(function() {
-        $(this).find('img').css({transform: 'scale(1.1)'});
-        $(this).find('.interest-name').animate({marginTop: '0px', opacity: '1'}, 200);
-        $(this).find('.interest-text').animate({top: '0px', opacity: '1'}, 200);
+        $(this).find('img').css({
+            transform: 'scale(1.1)'
+        });
+        $(this).find('.interest-name').animate({
+            marginTop: '0px',
+            opacity: '1'
+        }, 200);
+        $(this).find('.interest-text').animate({
+            top: '0px',
+            opacity: '1'
+        }, 200);
     }, function() {
-        $(this).find('img').animate({left: '0px'}, 200);
-        $(this).find('.interest-name').animate({marginTop: '-30px', opacity: '0'}, 200);
-        $(this).find('.interest-text').animate({top: '100px', opacity: '0'}, 200);
-        $(this).find('img').css({transform: 'scale(1)'});
+        $(this).find('img').animate({
+            left: '0px'
+        }, 200);
+        $(this).find('.interest-name').animate({
+            marginTop: '-30px',
+            opacity: '0'
+        }, 200);
+        $(this).find('.interest-text').animate({
+            top: '100px',
+            opacity: '0'
+        }, 200);
+        $(this).find('img').css({
+            transform: 'scale(1)'
+        });
     });
 }
 
@@ -134,8 +155,14 @@ function experiencesAnimations() {
     $(window).scroll(function(event) {
         $('.experience').each(function(index, el) {
             if ($(this).visible(true) && !$(this).hasClass('visible')) {
-                $(this).find('.image').delay(125).animate({right: '0px', opacity: '1'}, 500);
-                $(this).find('.exp-info').delay(125).animate({left: '0px', opacity: '1'}, 500);
+                $(this).find('.image').delay(125).animate({
+                    right: '0px',
+                    opacity: '1'
+                }, 500);
+                $(this).find('.exp-info').delay(125).animate({
+                    left: '0px',
+                    opacity: '1'
+                }, 500);
                 $(this).addClass('visible');
             }
         });
@@ -160,6 +187,7 @@ function circularize() {
 
 var animatedIcons = false;
 var animatedText = false;
+
 function contactAnimations() {
     $(window).scroll(function(event) {
         if ($('#social-icons').visible(true) && !animatedIcons) {

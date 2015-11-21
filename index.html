@@ -1,196 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/social-likes_flat.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<meta charset="UTF-8">
-	<meta name="description" content="The page of a hacker and technology enthusiasist. Featuring a portfolio of projects.">
-	<meta name="keywords" content="shafqat, dulal, personal, portfolio, website, projects,
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/social-likes_flat.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="description" content="The page of a hacker and technology enthusiasist. Featuring a portfolio of projects.">
+    <meta name="keywords" content="shafqat, dulal, personal, portfolio, website, projects,
 	web developer, server side programmer, algorithms, ruby on rails, python, java, oop, skills, computer science">
-	<meta name="author" content="Shafqat Dulal">
-	<script src="assets/js/vendor/jquery-2.1.3.min.js"></script>
-	<script src="assets/js/vendor/jquery.waypoints.min.js"></script>
-	<script src="assets/js/vendor/jquery.visible.min.js"></script>
-	<script src="assets/js/vendor/social-likes.min.js"></script>
-	<script src="assets/js/vendor/angular.min.js"></script>
-	<script src="assets/js/script.js"></script>
-	<script src="assets/js/app.js"></script>
-	<title>Shafqat Dulal</title>
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	  ga('create', 'UA-64615515-2', 'auto');
-	  ga('send', 'pageview');
-	</script>
+    <meta name="author" content="Shafqat Dulal">
+    <script src="assets/js/vendor/jquery-2.1.3.min.js"></script>
+    <script src="assets/js/vendor/jquery.waypoints.min.js"></script>
+    <script src="assets/js/vendor/jquery.visible.min.js"></script>
+    <script src="assets/js/vendor/social-likes.min.js"></script>
+    <script src="assets/js/vendor/angular.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/app.js"></script>
+    <title>Shafqat Dulal</title>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-64615515-2', 'auto');
+    ga('send', 'pageview');
+    </script>
 </head>
+
 <body ng-app="app">
-	<div id="container">
-		<div class="parallax background">
-			<div id="main-title">
-				<div id="big">
-					Shafqat Dulal
-				</div>
-				<div id="small">Aspiring Computer Scientist. Technology Enthusiast.</div>
-			</div>
-			<div id="overlay"></div>
-			<a href="#about" id="bouncing-arrow">
-				<span class="fa fa-chevron-down"></span>
-			</a>
-		</div>
-		<div id="content" ng-controller="MainController">
-			<nav>
-				<li id="item1"><a href="#about">About</a></li>
-				<li id="item2"><a href="#experiences">Work</a></li>
-				<li id="item3"><a href="#skills">Skills</a></li>
-				<li id="item4"><a href="#interests">Interests</a></li>
-				<li id="item5"><a href="#contact">Contact</a></li>
-			</nav>
-			<section id="about">
-				<header>
-					<h1>About Me</h1>
-					<h2>A technocratic developer</h2>
-				</header>
-				<div id="profile-pic">
-					<div></div>
-				</div>
-				<div id="about-me">
-					I am a second-year computer science student at UC Berkeley who aims to know as much as possible about the field. To accomplish this goal I've had multiple experiences, from desigining a competitive volunteering service to helping build an interesting mobile application at a startup! Nonetheless, there's still a lot more to cover and I always seek to learn more things; I asipre to contribute to the face of technology. Continue on to see what I've done!
-				</div>
-			</section>
-			<div class="beige">
-				<section id="experiences">
-					<header>
-						<h1>Experiences</h1>
-						<h2>The things I've done so far</h2>
-					</header>
-					<div class="experience" ng-repeat="experience in experiences">
-						<div class="image"><img ng-src="{{ experience.image }}" alt=""></div>
-						<div class="exp-info">
-							<div class='experience-title'><a href="{{ experience.link }}" target="_blank">{{ experience.title }}</a></div>
-							<div class="text">
-								{{ experience.text }}
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-			<section id="skills">
-				<header>
-					<h1>Skills</h1>
-					<h2>Picking up new things all the time</h2>
-				</header>
-				<div id="skills-circle">
-					<div id="info00" class="skill-info">
-						<div class="skill-title">Check it out</div>
-						<div class="skill-details">
-							<div class="skill-level">See my skills</div>
-							<div class="skill-also">Hover over each icon for more info about each skill!</div>
-						</div>
-					</div>
-					<div id="info01" class="skill-info">
-						<div class="skill-title">Python</div>
-						<div class="skill-details">
-							<div class="skill-level">Experienced</div>
-							<div class="skill-also"> Very clean and gets the job done. Built a Scheme interpreter with this and met the inventor of this language. <hr/> Also familiar with Django.</div>
-						</div>
-					</div>
-					<div id="info02" class="skill-info">
-						<div class="skill-title">Java</div>
-						<div class="skill-details">
-							<div class="skill-level">Experienced</div>
-							<div class="skill-also">One of the most-used programming languages to this day. Has a highly developed standard library. Used this to make a git clone.</div>
-						</div>
-					</div>
-					<div id="info03" class="skill-info">
-						<div class="skill-title">Git</div>
-						<div class="skill-details">
-							<div class="skill-level">Proficient</div>
-							<div class="skill-also">The version control system used by developers around the world. I've heavily used the system. <hr/> Also familiar with GitHub.</div>
-						</div>
-					</div>
-					<div id="info04" class="skill-info">
-						<div class="skill-title">HTML5</div>
-						<div class="skill-details">
-							<div class="skill-level">Proficient</div>
-							<div class="skill-also">Essential for web development.</div>
-						</div>
-					</div>
-					<div id="info05" class="skill-info">
-						<div class="skill-title">CSS3</div>
-						<div class="skill-details">
-							<div class="skill-level">Proficient</div>
-							<div class="skill-also">This page would not look so great without cascading style sheets.</div>
-						</div>
-					</div>
-					<div id="info06" class="skill-info">
-						<div class="skill-title">JavaScript</div>
-						<div class="skill-details">
-							<div class="skill-level">Proficient</div>
-							<div class="skill-also">
-								Fun to use. Very important scripting language for the web. In fact, this very site relies on it! <hr/>
-								Also familiar with jQuery and AngularJS.
-							</div>
-						</div>
-					</div>
-					<div class="skill-icon"><img src="assets/img/python.png" alt=""></div>
-					<div class="skill-icon"><img src="assets/img/java.png" alt=""></div>
-					<div class="skill-icon"><img src="assets/img/git.png" alt=""></div>
-					<div class="skill-icon"><img src="assets/img/html5.png" alt=""></div>
-					<div class="skill-icon"><img src="assets/img/css3.png" alt=""></div>
-					<div class="skill-icon"><img src="assets/img/javascript.png" alt=""></div>
-				</div>
-			</section>
-			<div class="beige">
-				<section id="interests">
-				<header>
-					<h1>On technology</h1>
-					<h2>An intersection of technology and culture</h2>
-				</header>
-				<div id="interests-pictures">
-					<div class="interest" ng-repeat="interest in interests">
-						<img ng-src="{{ interest.image }}">
-						<div class="interest-info">
-							<div class="interest-name">{{ interest.name }}</div>
-							<div class="interest-text">
-								{{ interest.text }}
-							</div>
-							<a href="{{ interest.link }}" target="_blank"></a>
-						</div>
-					</div>
-				</div>
-			</section>
-			</div>
-			<section id="contact">
-				<header>
-					<h1>Contact</h1>
-					<h2>Let's Talk</h2>
-				</header>
-				<div id="contact-info">
-					<div id="social-icons">
-						<a href="https://www.facebook.com/shafqat.dulal" target="_blank" class="social-icon"><span class="fa fa-facebook-square"></span></a>
-						<a href="https://www.google.com/+ShafqatDulal" target="_blank" class="social-icon"><span class="fa fa-google-plus-square"></span></a>
-						<a href="https://twitter.com/ABirdThatFlies" target="_blank" class="social-icon"><span class="fa fa-twitter-square"></span></a> <br>
-						<a href="https://www.linkedin.com/in/shafqatdulal" target="_blank" class="social-icon"><span class="fa fa-linkedin-square"></span></a>
-						<a href="https://github.com/sdulal" target="_blank" class="social-icon"><span class="fa fa-github-square"></span></a>
-						<a href="mailto:shafqat.dulal@gmail.com" target="_blank" class="social-icon"><span class="fa fa-envelope-square"></span></a>
-					</div>
-					<div id="contact-text">
-						I am very interested in software engineering internship opportunities for next summer. Reach out to me on one of the various networks! Otherwise, here's my <a href="https://drive.google.com/file/d/0B4zxv4wnD4qeRWdVeGhseEs5UlE/view?usp=sharing" target="_blank">résumé</a>.
-					</div>
-				<div class="social-likes buttons">
-					<div class="facebook button" title="Share link on Facebook">Facebook</div>
-					<div class="twitter button" title="Share link on Twitter">Twitter</div>
-					<div class="plusone button" title="Share link on Google+">Google+</div>
-				</div>
-				</div>
-			</section>
-			<main>
-		</div>
-	</div>
+    <div id="container">
+        <div class="parallax background">
+            <div id="main-title">
+                <div id="big">
+                    Shafqat Dulal
+                </div>
+                <div id="small">Aspiring Computer Scientist. Technology Enthusiast.</div>
+            </div>
+            <div id="overlay"></div>
+            <a href="#about" id="bouncing-arrow">
+                <span class="fa fa-chevron-down"></span>
+            </a>
+        </div>
+        <div id="content" ng-controller="MainController">
+            <nav>
+                <li id="item1"><a href="#about">About</a></li>
+                <li id="item2"><a href="#experiences">Work</a></li>
+                <li id="item3"><a href="#skills">Skills</a></li>
+                <li id="item4"><a href="#interests">Interests</a></li>
+                <li id="item5"><a href="#contact">Contact</a></li>
+            </nav>
+            <section id="about">
+                <header>
+                    <h1>About Me</h1>
+                    <h2>A technocratic developer</h2>
+                </header>
+                <div id="profile-pic">
+                    <div></div>
+                </div>
+                <div id="about-me">
+                    I am a second-year computer science student at UC Berkeley who aims to know as much as possible about the field. To accomplish this goal I've had multiple experiences, from desigining a competitive volunteering service to helping build an interesting mobile application at a startup! Nonetheless, there's still a lot more to cover and I always seek to learn more things; I asipre to contribute to the face of technology. Continue on to see what I've done!
+                </div>
+            </section>
+            <div class="beige">
+                <section id="experiences">
+                    <header>
+                        <h1>Experiences</h1>
+                        <h2>The things I've done so far</h2>
+                    </header>
+                    <div class="experience" ng-repeat="experience in experiences">
+                        <div class="image"><img ng-src="{{ experience.image }}" alt=""></div>
+                        <div class="exp-info">
+                            <div class='experience-title'><a href="{{ experience.link }}" target="_blank">{{ experience.title }}</a></div>
+                            <div class="text">
+                                {{ experience.text }}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <section id="skills">
+                <header>
+                    <h1>Skills</h1>
+                    <h2>Picking up new things all the time</h2>
+                </header>
+                <div id="skills-circle">
+                    <div id="info00" class="skill-info">
+                        <div class="skill-title">Check it out</div>
+                        <div class="skill-details">
+                            <div class="skill-level">See my skills</div>
+                            <div class="skill-also">Hover over each icon for more info about each skill!</div>
+                        </div>
+                    </div>
+                    <div id="info01" class="skill-info">
+                        <div class="skill-title">Python</div>
+                        <div class="skill-details">
+                            <div class="skill-level">Experienced</div>
+                            <div class="skill-also"> Very clean and gets the job done. Built a Scheme interpreter with this and met the inventor of this language.
+                                <hr/> Also familiar with Django.</div>
+                        </div>
+                    </div>
+                    <div id="info02" class="skill-info">
+                        <div class="skill-title">Java</div>
+                        <div class="skill-details">
+                            <div class="skill-level">Experienced</div>
+                            <div class="skill-also">One of the most-used programming languages to this day. Has a highly developed standard library. Used this to make a git clone.</div>
+                        </div>
+                    </div>
+                    <div id="info03" class="skill-info">
+                        <div class="skill-title">Git</div>
+                        <div class="skill-details">
+                            <div class="skill-level">Proficient</div>
+                            <div class="skill-also">The version control system used by developers around the world. I've heavily used the system.
+                                <hr/> Also familiar with GitHub.</div>
+                        </div>
+                    </div>
+                    <div id="info04" class="skill-info">
+                        <div class="skill-title">HTML5</div>
+                        <div class="skill-details">
+                            <div class="skill-level">Proficient</div>
+                            <div class="skill-also">Essential for web development.</div>
+                        </div>
+                    </div>
+                    <div id="info05" class="skill-info">
+                        <div class="skill-title">CSS3</div>
+                        <div class="skill-details">
+                            <div class="skill-level">Proficient</div>
+                            <div class="skill-also">This page would not look so great without cascading style sheets.</div>
+                        </div>
+                    </div>
+                    <div id="info06" class="skill-info">
+                        <div class="skill-title">JavaScript</div>
+                        <div class="skill-details">
+                            <div class="skill-level">Proficient</div>
+                            <div class="skill-also">
+                                Fun to use. Very important scripting language for the web. In fact, this very site relies on it!
+                                <hr/> Also familiar with jQuery and AngularJS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-icon"><img src="assets/img/python.png" alt=""></div>
+                    <div class="skill-icon"><img src="assets/img/java.png" alt=""></div>
+                    <div class="skill-icon"><img src="assets/img/git.png" alt=""></div>
+                    <div class="skill-icon"><img src="assets/img/html5.png" alt=""></div>
+                    <div class="skill-icon"><img src="assets/img/css3.png" alt=""></div>
+                    <div class="skill-icon"><img src="assets/img/javascript.png" alt=""></div>
+                </div>
+            </section>
+            <div class="beige">
+                <section id="interests">
+                    <header>
+                        <h1>On technology</h1>
+                        <h2>An intersection of technology and culture</h2>
+                    </header>
+                    <div id="interests-pictures">
+                        <div class="interest" ng-repeat="interest in interests">
+                            <img ng-src="{{ interest.image }}">
+                            <div class="interest-info">
+                                <div class="interest-name">{{ interest.name }}</div>
+                                <div class="interest-text">
+                                    {{ interest.text }}
+                                </div>
+                                <a href="{{ interest.link }}" target="_blank"></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <section id="contact">
+                <header>
+                    <h1>Contact</h1>
+                    <h2>Let's Talk</h2>
+                </header>
+                <div id="contact-info">
+                    <div id="social-icons">
+                        <a href="https://www.facebook.com/shafqat.dulal" target="_blank" class="social-icon"><span class="fa fa-facebook-square"></span></a>
+                        <a href="https://www.google.com/+ShafqatDulal" target="_blank" class="social-icon"><span class="fa fa-google-plus-square"></span></a>
+                        <a href="https://twitter.com/ABirdThatFlies" target="_blank" class="social-icon"><span class="fa fa-twitter-square"></span></a>
+                        <br>
+                        <a href="https://www.linkedin.com/in/shafqatdulal" target="_blank" class="social-icon"><span class="fa fa-linkedin-square"></span></a>
+                        <a href="https://github.com/sdulal" target="_blank" class="social-icon"><span class="fa fa-github-square"></span></a>
+                        <a href="mailto:shafqat.dulal@gmail.com" target="_blank" class="social-icon"><span class="fa fa-envelope-square"></span></a>
+                    </div>
+                    <div id="contact-text">
+                        I am very interested in software engineering internship opportunities for next summer. Reach out to me on one of the various networks! Otherwise, here's my <a href="https://drive.google.com/file/d/0B4zxv4wnD4qeRWdVeGhseEs5UlE/view?usp=sharing" target="_blank">résumé</a>.
+                    </div>
+                    <div class="social-likes buttons">
+                        <div class="facebook button" title="Share link on Facebook">Facebook</div>
+                        <div class="twitter button" title="Share link on Twitter">Twitter</div>
+                        <div class="plusone button" title="Share link on Google+">Google+</div>
+                    </div>
+                </div>
+            </section>
+            <main>
+        </div>
+    </div>
 </body>
+
 </html>
